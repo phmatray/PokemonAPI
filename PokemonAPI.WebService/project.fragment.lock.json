@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "exports": {
+    "PokemonAPI.Models/1.0.0": {
+      "type": "project",
+      "framework": ".NETStandard,Version=v1.4",
+      "compile": {
+        "bin/Debug/PokemonAPI.Models.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/PokemonAPI.Models.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/PokemonAPI.Models.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}

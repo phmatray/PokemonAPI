@@ -1,0 +1,3226 @@
+﻿<Section>
+    <h4>APIResourceList</h4>
+    <table>
+        <tr>
+            <td>count</td>
+            <td>The total number of resources available from this API</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>next</td>
+            <td>The URL for the next page in the list</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>previous</td>
+            <td>The URL for the previous page in the list</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>results</td>
+            <td>A list of unnamed API resources</td>
+            <td>list APIResource</td>
+        </tr>
+    </table>
+</Section>
+<Section>
+    <h4>NamedAPIResourceList</h4>
+    <table>
+        <tr>
+            <td>count</td>
+            <td>The total number of resources available from this API</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>next</td>
+            <td>The URL for the next page in the list</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>previous</td>
+            <td>The URL for the previous page in the list</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>results</td>
+            <td>A list of named API resources</td>
+            <td>list NamedAPIResource</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Berry</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this berry resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this berry resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>growth_time</td>
+            <td>Time it takes the tree to grow one stage, in hours. Berry trees go through four of these growth stages before they can be picked.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>max_harvest</td>
+            <td>The maximum number of these berries that can grow on one tree in Generation IV</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>natural_gift_power</td>
+            <td>The power of the move "Natural Gift" when used with this Berry</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>size</td>
+            <td>The size of this Berry, in millimeters</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>smoothness</td>
+            <td>The smoothness of this Berry, used in making Pokéblocks or Poffins</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>soil_dryness</td>
+            <td>The speed at which this Berry dries out the soil as it grows. A higher rate means the soil dries more quickly.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>firmness</td>
+            <td>The firmness of this berry, used in making Pokéblocks or Poffins</td>
+            <td>NamedAPIResource</td>
+        </tr>
+        <tr>
+            <td>flavors</td>
+            <td>A list of references to each flavor a berry can have and the potency of each of those flavors in regard to this berry</td>
+            <td>list BerryFlavorMap</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>Berries are actually items. This is a reference to the item specific data for this berry.</td>
+            <td>NamedAPIResource (Item)</td>
+        </tr>
+        <tr>
+            <td>natural_gift_type</td>
+            <td>The Type the move "Natural Gift" has when used with this Berry</td>
+            <td>NamedAPIResource (Type)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>BerryFlavorMap</h4>
+    <table>
+        <tr>
+            <td>potency</td>
+            <td>How powerful the referenced flavor is for this berry</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>flavor</td>
+            <td>The referenced berry flavor</td>
+            <td>NamedAPIResource (BerryFlavor)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>BerryFirmness</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this berry firmness resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this berry firmness resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>berries</td>
+            <td>A list of the berries with this firmness</td>
+            <td>list NamedAPIResource (Berry)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this berry firmness listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>BerryFlavor</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this berry flavor resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this berry flavor resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>berries</td>
+            <td>A list of the berries with this flavor</td>
+            <td>list FlavorBerryMap</td>
+        </tr>
+        <tr>
+            <td>contest_type</td>
+            <td>The contest type that correlates with this berry flavor</td>
+            <td>NamedAPIResource (ContestType)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this berry flavor listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>FlavorBerryMap</h4>
+    <table>
+        <tr>
+            <td>potency</td>
+            <td>How powerful the referenced flavor is for this berry</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>berry</td>
+            <td>The berry with the referenced flavor</td>
+            <td>NamedAPIResource (Berry)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>ContestType</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this contest type resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this contest type resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>berry_flavor</td>
+            <td>The berry flavor that correlates with this contest type</td>
+            <td>NamedAPIResource (BerryFlavor)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this contest type listed in different languages</td>
+            <td>list ContestName</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>ContestName</h4>
+    <table>
+        <tr>
+            <td>name</td>
+            <td>The name for this contest</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>color</td>
+            <td>The color associated with this contest's name</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>language</td>
+            <td>The language that this name is in</td>
+            <td>NamedAPIResource (Language)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>ContestEffect</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this contest type resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>appeal</td>
+            <td>The base number of hearts the user of this move gets</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>jam</td>
+            <td>The base number of hearts the user's opponent loses</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>effect_entries</td>
+            <td>The result of this contest effect listed in different languages</td>
+            <td>list Effect</td>
+        </tr>
+        <tr>
+            <td>flavor_text_entries</td>
+            <td>The flavor text of this contest effect listed in different languages</td>
+            <td>list FlavorText</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>SuperContestEffect</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this super contest effect resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>appeal</td>
+            <td>The level of appeal this super contest effect has</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>flavor_text_entries</td>
+            <td>The flavor text of this super contest effect listed in different languages</td>
+            <td>list FlavorText</td>
+        </tr>
+        <tr>
+            <td>moves</td>
+            <td>A list of moves that have the effect when used in super contests</td>
+            <td>list NamedAPIResource (Move)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>EncounterMethod</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this encounter method resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this encounter method resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>order</td>
+            <td>A good value for sorting</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this encounter method listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>EncounterCondition</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this encounter condition resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this encounter condition resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this encounter method listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>values</td>
+            <td>A list of possible values for this encounter condition</td>
+            <td>list NamedAPIResource (EncounterConditionValue)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>EncounterConditionValue</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this encounter condition value resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this encounter condition value resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>condition</td>
+            <td>The condition this encounter condition value pertains to</td>
+            <td>list NamedAPIResource (EncounterCondition)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this encounter condition value listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>EvolutionChain</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this evolution chain resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>baby_trigger_item</td>
+            <td>The item that a Pokémon would be holding when mating that would trigger the egg hatching a baby Pokémon rather than a basic Pokémon</td>
+            <td>NamedAPIResource (Item)</td>
+        </tr>
+        <tr>
+            <td>chain</td>
+            <td>The base chain link object. Each link contains evolution details for a Pokémon in the chain. Each link references the next Pokémon in the natural evolution order.</td>
+            <td>ChainLink</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>ChainLink</h4>
+    <table>
+        <tr>
+            <td>is_baby</td>
+            <td>Whether or not this link is for a baby Pokémon. This would only ever be true on the base link.</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>species</td>
+            <td>The Pokémon species at this point in the evolution chain</td>
+            <td>NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+        <tr>
+            <td>evolution_details</td>
+            <td>All details regarding the specific details of the referenced Pokémon species evolution</td>
+            <td>list EvolutionDetail</td>
+        </tr>
+        <tr>
+            <td>evolves_to</td>
+            <td>A List of chain objects.</td>
+            <td>list ChainLink</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>EvolutionDetail</h4>
+    <table>
+        <tr>
+            <td>item</td>
+            <td>The item required to cause evolution this into Pokémon species</td>
+            <td>NamedAPIResource (Item)</td>
+        </tr>
+        <tr>
+            <td>trigger</td>
+            <td>The type of event that triggers evolution into this Pokémon species</td>
+            <td>NamedAPIResource (EvolutionTrigger)</td>
+        </tr>
+        <tr>
+            <td>gender</td>
+            <td>The id of the gender of the evolving Pokémon species must be in order to evolve into this Pokémon species</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>held_item</td>
+            <td>The item the evolving Pokémon species must be holding during the evolution trigger event to evolve into this Pokémon species</td>
+            <td>NamedAPIResource (Item)</td>
+        </tr>
+        <tr>
+            <td>known_move</td>
+            <td>The move that must be known by the evolving Pokémon species during the evolution trigger event in order to evolve into this Pokémon species</td>
+            <td>NamedAPIResource (Move)</td>
+        </tr>
+        <tr>
+            <td>known_move_type</td>
+            <td>The evolving Pokémon species must know a move with this type during the evolution trigger event in order to evolve into this Pokémon species</td>
+            <td>NamedAPIResource (Type)</td>
+        </tr>
+        <tr>
+            <td>location</td>
+            <td>The location the evolution must be triggered at.</td>
+            <td>NamedAPIResource (Location)</td>
+        </tr>
+        <tr>
+            <td>min_level</td>
+            <td>The minimum required level of the evolving Pokémon species to evolve into this Pokémon species</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>min_happiness</td>
+            <td>The minimum required level of happiness the evolving Pokémon species to evolve into this Pokémon species</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>min_beauty</td>
+            <td>The minimum required level of beauty the evolving Pokémon species to evolve into this Pokémon species</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>min_affection</td>
+            <td>The minimum required level of affection the evolving Pokémon species to evolve into this Pokémon species</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>needs_overworld_rain</td>
+            <td>Whether or not it must be raining in the overworld to cause evolution this Pokémon species</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>party_species</td>
+            <td>The Pokémon species that must be in the players party in order for the evolving Pokémon species to evolve into this Pokémon species</td>
+            <td>NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+        <tr>
+            <td>party_type</td>
+            <td>The player must have a Pokémon of this type in their party during the evolution trigger event in order for the evolving Pokémon species to evolve into this Pokémon species</td>
+            <td>NamedAPIResource (Type)</td>
+        </tr>
+        <tr>
+            <td>relative_physical_stats</td>
+            <td>The required relation between the Pokémon's Attack and Defense stats. 1 means Attack &gt; Defense. 0 means Attack = Defense. -1 means Attack &lt; Defense.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>time_of_day</td>
+            <td>The required time of day. Day or night.</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>trade_species</td>
+            <td>Pokémon species for which this one must be traded.</td>
+            <td>NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+        <tr>
+            <td>turn_upside_down</td>
+            <td>Whether or not the 3DS needs to be turned upside-down as this Pokémon levels up.</td>
+            <td>boolean</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>EvolutionTrigger</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this evolution trigger resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this evolution trigger resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this evolution trigger listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>pokemon_species</td>
+            <td>A list of pokemon species that result from this evolution trigger</td>
+            <td>list NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Generation</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this generation resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this generation resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>abilities</td>
+            <td>A list of abilities that were introduced in this generation</td>
+            <td>list NamedAPIResource (Ability)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this generation listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>main_region</td>
+            <td>The main region travelled in this generation</td>
+            <td>NamedAPIResource</td>
+        </tr>
+        <tr>
+            <td>moves</td>
+            <td>A list of moves that were introduced in this generation</td>
+            <td>list NamedAPIResource (Move)</td>
+        </tr>
+        <tr>
+            <td>pokemon_species</td>
+            <td>A list of Pokémon species that were introduced in this generation</td>
+            <td>list NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+        <tr>
+            <td>types</td>
+            <td>A list of types that were introduced in this generation</td>
+            <td>list NamedAPIResource (Type)</td>
+        </tr>
+        <tr>
+            <td>version_groups</td>
+            <td>A list of version groups that were introduced in this generation</td>
+            <td>list NamedAPIResource (VersionGroup)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Pokedex</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this Pokédex resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this Pokédex resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>is_main_series</td>
+            <td>Whether or not this Pokédex originated in the main series of the video games</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>descriptions</td>
+            <td>The description of this Pokédex listed in different languages</td>
+            <td>list Description</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this Pokédex listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>pokemon_entries</td>
+            <td>A list of Pokémon catalogued in this Pokédex and their indexes</td>
+            <td>list PokemonEntry</td>
+        </tr>
+        <tr>
+            <td>region</td>
+            <td>The region this Pokédex catalogues Pokémon for</td>
+            <td>NamedAPIResource</td>
+        </tr>
+        <tr>
+            <td>version_groups</td>
+            <td>A list of version groups this Pokédex is relevant to</td>
+            <td>list NamedAPIResource (VersionGroup)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonEntry</h4>
+    <table>
+        <tr>
+            <td>entry_number</td>
+            <td>The index of this Pokémon species entry within the Pokédex</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>pokemon_species</td>
+            <td>The Pokémon species being encountered</td>
+            <td>NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Version</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this version resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this version resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this version listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>version_group</td>
+            <td>The version group this version belongs to</td>
+            <td>NamedAPIResource (VersionGroup)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>VersionGroup</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this version group resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this version group resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>order</td>
+            <td>Order for sorting. Almost by date of release, except similar versions are grouped together.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>generation</td>
+            <td>The generation this version was introduced in</td>
+            <td>NamedAPIResource (Generation)</td>
+        </tr>
+        <tr>
+            <td>move_learn_methods</td>
+            <td>A list of methods in which Pokémon can learn moves in this version group</td>
+            <td>list NamedAPIResource (MoveLearnMethod)</td>
+        </tr>
+        <tr>
+            <td>pokedexes</td>
+            <td>A list of Pokédexes introduces in this version group</td>
+            <td>list NamedAPIResource (Pokedex)</td>
+        </tr>
+        <tr>
+            <td>regions</td>
+            <td>A list of regions that can be visited in this version group</td>
+            <td>list NamedAPIResource</td>
+        </tr>
+        <tr>
+            <td>versions</td>
+            <td>The versions this version group owns</td>
+            <td>list NamedAPIResource</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Item</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this item resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this item resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>cost</td>
+            <td>The price of this item in stores</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>fling_power</td>
+            <td>The power of the move Fling when used with this item.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>fling_effect</td>
+            <td>The effect of the move Fling when used with this item</td>
+            <td>NamedAPIResource (ItemFlingEffect)</td>
+        </tr>
+        <tr>
+            <td>attributes</td>
+            <td>A list of attributes this item has</td>
+            <td>list NamedAPIResource (ItemAttribute)</td>
+        </tr>
+        <tr>
+            <td>category</td>
+            <td>The category of items this item falls into</td>
+            <td>ItemCategory</td>
+        </tr>
+        <tr>
+            <td>effect_entries</td>
+            <td>The effect of this ability listed in different languages</td>
+            <td>list VerboseEffect</td>
+        </tr>
+        <tr>
+            <td>flavor_text_entries</td>
+            <td>The flavor text of this ability listed in different languages</td>
+            <td>list VersionGroupFlavorText</td>
+        </tr>
+        <tr>
+            <td>game_indices</td>
+            <td>A list of game indices relevent to this item by generation</td>
+            <td>list GenerationGameIndex</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this item listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>sprites</td>
+            <td>A set of sprites used to depict this item in the game</td>
+            <td>ItemSprites</td>
+        </tr>
+        <tr>
+            <td>held_by_pokemon</td>
+            <td>A list of Pokémon that might be found in the wild holding this item</td>
+            <td>list ItemHolderPokemon</td>
+        </tr>
+        <tr>
+            <td>baby_trigger_for</td>
+            <td>An evolution chain this item requires to produce a bay during mating</td>
+            <td>APIResource (EvolutionChain)</td>
+        </tr>
+        <tr>
+            <td>machines</td>
+            <td>A list of the machines related to this item</td>
+            <td>list MachineVersionDetail</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>ItemSprites</h4>
+    <table>
+        <tr>
+            <td>default</td>
+            <td>The default depiction of this item</td>
+            <td>string</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>ItemHolderPokemon</h4>
+    <table>
+        <tr>
+            <td>pokemon</td>
+            <td>The Pokémon that holds this item</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>version_details</td>
+            <td>The details for the version that this item is held in by the Pokémon</td>
+            <td>list ItemHolderPokemonVersionDetail</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>ItemHolderPokemonVersionDetail</h4>
+    <table>
+        <tr>
+            <td>rarity</td>
+            <td>How often this Pokémon holds this item in this version</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>version</td>
+            <td>The version that this item is held in by the Pokémon</td>
+            <td>NamedAPIResource (Version)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>ItemAttribute</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this item attribute resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this item attribute resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>items</td>
+            <td>A list of items that have this attribute</td>
+            <td>list NamedAPIResource (Item)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this item attribute listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>descriptions</td>
+            <td>The description of this item attribute listed in different languages</td>
+            <td>list Description</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>ItemCategory</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this item category resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this item category resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>items</td>
+            <td>A list of items that are a part of this category</td>
+            <td>list NamedAPIResource (Item)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this item category listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>pocket</td>
+            <td>The pocket items in this category would be put in</td>
+            <td>NamedAPIResource (ItemPocket)</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this fling effect resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this fling effect resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>effect_entries</td>
+            <td>The result of this fling effect listed in different languages</td>
+            <td>list Effect</td>
+        </tr>
+        <tr>
+            <td>items</td>
+            <td>A list of items that have this fling effect</td>
+            <td>list NamedAPIResource (Item)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>ItemPocket</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this item pocket resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this item pocket resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>categories</td>
+            <td>A list of item categories that are relevant to this item pocket</td>
+            <td>list NamedAPIResource (ItemCategory)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this item pocket listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Machine</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this machine resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>The TM or HM item that corresponds to this machine</td>
+            <td>NamedAPIResource (Item)</td>
+        </tr>
+        <tr>
+            <td>move</td>
+            <td>The move that is taught by this machine</td>
+            <td>NamedAPIResource (Move)</td>
+        </tr>
+        <tr>
+            <td>version_group</td>
+            <td>The version group that this machine applies to</td>
+            <td>NamedAPIResource (VersionGroup)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Move</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this move resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this move resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>accuracy</td>
+            <td>The percent value of how likely this move is to be successful</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>effect_chance</td>
+            <td>The percent value of how likely it is this moves effect will happen</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>pp</td>
+            <td>Power points. The number of times this move can be used</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>priority</td>
+            <td>A value between -8 and 8. Sets the order in which moves are executed during battle. See Bulbapedia for greater detail.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>power</td>
+            <td>The base power of this move with a value of 0 if it does not have a base power</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>contest_combos</td>
+            <td>A detail of normal and super contest combos that require this move</td>
+            <td>ContestComboSets</td>
+        </tr>
+        <tr>
+            <td>contest_type</td>
+            <td>The type of appeal this move gives a Pokémon when used in a contest</td>
+            <td>NamedAPIResource (ContestType)</td>
+        </tr>
+        <tr>
+            <td>contest_effect</td>
+            <td>The effect the move has when used in a contest</td>
+            <td>APIResource (ContestEffect)</td>
+        </tr>
+        <tr>
+            <td>damage_class</td>
+            <td>The type of damage the move inflicts on the target, e.g. physical</td>
+            <td>NamedAPIResource (MoveDamageClass)</td>
+        </tr>
+        <tr>
+            <td>effect_entries</td>
+            <td>The effect of this move listed in different languages</td>
+            <td>list VerboseEffect</td>
+        </tr>
+        <tr>
+            <td>effect_changes</td>
+            <td>The list of previous effects this move has had across version groups of the games</td>
+            <td>list AbilityEffectChange</td>
+        </tr>
+        <tr>
+            <td>flavor_text_entries</td>
+            <td>The flavor text of this move listed in different languages</td>
+            <td>Move</td>
+        </tr>
+        <tr>
+            <td>generation</td>
+            <td>The generation in which this move was introduced</td>
+            <td>NamedAPIResource (Generation)</td>
+        </tr>
+        <tr>
+            <td>machines</td>
+            <td>A list of the machines that teach this move</td>
+            <td>list MachineVersionDetail</td>
+        </tr>
+        <tr>
+            <td>meta</td>
+            <td>Metadata about this move</td>
+            <td>MoveMetaData</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this move listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>past_values</td>
+            <td>A list of move resource value changes across version groups of the game</td>
+            <td>list PastMoveStatValues</td>
+        </tr>
+        <tr>
+            <td>stat_changes</td>
+            <td>A list of stats this moves effects and how much it effects them</td>
+            <td>list MoveStatChange</td>
+        </tr>
+        <tr>
+            <td>super_contest_effect</td>
+            <td>The effect the move has when used in a super contest</td>
+            <td>APIResource (SuperContestEffect)</td>
+        </tr>
+        <tr>
+            <td>target</td>
+            <td>The type of target that will receive the effects of the attack</td>
+            <td>NamedAPIResource (MoveTarget)</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>The elemental type of this move</td>
+            <td>NamedAPIResource (Type)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>ContestComboSets</h4>
+    <table>
+        <tr>
+            <td>normal</td>
+            <td>A detail of moves this move can be used before or after, granting additional appeal points in contests</td>
+            <td>ContestComboDetail</td>
+        </tr>
+        <tr>
+            <td>super</td>
+            <td>A detail of moves this move can be used before or after, granting additional appeal points in super contests</td>
+            <td>ContestComboDetail</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>ContestComboDetail</h4>
+    <table>
+        <tr>
+            <td>use_before</td>
+            <td>A list of moves to use before this move</td>
+            <td>list NamedAPIResource (Move)</td>
+        </tr>
+        <tr>
+            <td>use_after</td>
+            <td>A list of moves to use after this move</td>
+            <td>list NamedAPIResource (Move)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>MoveFlavorText</h4>
+    <table>
+        <tr>
+            <td>flavor_text</td>
+            <td>The localized flavor text for an api resource in a specific language</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>language</td>
+            <td>The language this name is in</td>
+            <td>NamedAPIResource (Language)</td>
+        </tr>
+        <tr>
+            <td>version_group</td>
+            <td>The version group that uses this flavor text</td>
+            <td>NamedAPIResource (VersionGroup)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>MoveMetaData</h4>
+    <table>
+        <tr>
+            <td>ailment</td>
+            <td>The status ailment this move inflicts on its target</td>
+            <td>NamedAPIResource (MoveAilment)</td>
+        </tr>
+        <tr>
+            <td>category</td>
+            <td>The category of move this move falls under, e.g. damage or ailment</td>
+            <td>NamedAPIResource (Move)</td>
+        </tr>
+        <tr>
+            <td>min_hits</td>
+            <td>The minimum number of times this move hits. Null if it always only hits once.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>max_hits</td>
+            <td>The maximum number of times this move hits. Null if it always only hits once.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>min_turns</td>
+            <td>The minimum number of turns this move continues to take effect. Null if it always only lasts one turn.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>max_turns</td>
+            <td>The maximum number of turns this move continues to take effect. Null if it always only lasts one turn.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>drain</td>
+            <td>HP drain (if positive) or Recoil damage (if negative), in percent of damage done</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>healing</td>
+            <td>The amount of hp gained by the attacking Pokemon, in percent of it's maximum HP</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>crit_rate</td>
+            <td>Critical hit rate bonus</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>ailment_chance</td>
+            <td>The likelihood this attack will cause an ailment</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>flinch_chance</td>
+            <td>The likelihood this attack will cause the target Pokémon to flinch</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>stat_chance</td>
+            <td>The likelihood this attack will cause a stat change in the target Pokémon</td>
+            <td>integer</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>MoveStatChange</h4>
+    <table>
+        <tr>
+            <td>change</td>
+            <td>The amount of change</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>stat</td>
+            <td>The stat being affected</td>
+            <td>NamedAPIResource (Stat)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PastMoveStatValues</h4>
+    <table>
+        <tr>
+            <td>accuracy</td>
+            <td>The percent value of how likely this move is to be successful</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>effect_chance</td>
+            <td>The percent value of how likely it is this moves effect will take effect</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>power</td>
+            <td>The base power of this move with a value of 0 if it does not have a base power</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>pp</td>
+            <td>Power points. The number of times this move can be used</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>effect_entries</td>
+            <td>The effect of this move listed in different languages</td>
+            <td>list VerboseEffect</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>The elemental type of this move</td>
+            <td>NamedAPIResource (Type)</td>
+        </tr>
+        <tr>
+            <td>version_group</td>
+            <td>The version group in which these move stat values were in effect</td>
+            <td>NamedAPIResource (VersionGroup)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Move Ailment</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this move ailment resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this move ailment resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>moves</td>
+            <td>A list of moves that cause this ailment</td>
+            <td>list NamedAPIResource (Move)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this move ailment listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Move Battle Style</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this move battle style resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this move battle style resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this move battle style listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Move Category</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this move category resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this move category resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>moves</td>
+            <td>A list of moves that fall into this category</td>
+            <td>list NamedAPIResource (Move)</td>
+        </tr>
+        <tr>
+            <td>descriptions</td>
+            <td>The description of this move ailment listed in different languages</td>
+            <td>list Description</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Move Damage Class</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this move damage class resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this move damage class resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>descriptions</td>
+            <td>The description of this move damage class listed in different languages</td>
+            <td>list Description</td>
+        </tr>
+        <tr>
+            <td>moves</td>
+            <td>A list of moves that fall into this damage class</td>
+            <td>list NamedAPIResource (Move)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this move damage class listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Move Learn Method</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this move learn method resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this move learn method resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>descriptions</td>
+            <td>The description of this move learn method listed in different languages</td>
+            <td>list Description</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this move learn method listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>version_groups</td>
+            <td>A list of version groups where moves can be learned through this method</td>
+            <td>list NamedAPIResource (VersionGroup)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Move Target</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this move target resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this move target resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>descriptions</td>
+            <td>The description of this move target listed in different languages</td>
+            <td>list Description</td>
+        </tr>
+        <tr>
+            <td>moves</td>
+            <td>A list of moves that that are directed at this target</td>
+            <td>list NamedAPIResource (Move)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this move target listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Location</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this location resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this location resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>region</td>
+            <td>The region this location can be found in</td>
+            <td>NamedAPIResource</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this language listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>game_indices</td>
+            <td>A list of game indices relevent to this location by generation</td>
+            <td>list GenerationGameIndex</td>
+        </tr>
+        <tr>
+            <td>areas</td>
+            <td>Areas that can be found within this location</td>
+            <td>list NamedAPIResource (LocationArea)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>LocationArea</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this location resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this location resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>game_index</td>
+            <td>The internal id of an API resource within game data</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>encounter_method_rates</td>
+            <td>A list of methods in which Pokémon may be encountered in this area and how likely the method will occur depending on the version of the game</td>
+            <td>list EncounterMethodRate</td>
+        </tr>
+        <tr>
+            <td>location</td>
+            <td>The region this location can be found in</td>
+            <td>NamedAPIResource</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this location area listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>pokemon_encounters</td>
+            <td>A list of Pokémon that can be encountered in this area along with version specific details about the encounter</td>
+            <td>list PokemonEncounter</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>EncounterMethodRate</h4>
+    <table>
+        <tr>
+            <td>encounter_method</td>
+            <td>The method in which Pokémon may be encountered in an area.</td>
+            <td>NamedAPIResource (EncounterMethod)</td>
+        </tr>
+        <tr>
+            <td>version_details</td>
+            <td>The chance of the encounter to occur on a version of the game.</td>
+            <td>list EncounterVersionDetails</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>EncounterVersionDetails</h4>
+    <table>
+        <tr>
+            <td>rate</td>
+            <td>The chance of an encounter to occur.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>version</td>
+            <td>The version of the game in which the encounter can occur with the given chance.</td>
+            <td>NamedAPIResource (Version)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonEncounter</h4>
+    <table>
+        <tr>
+            <td>pokemon</td>
+            <td>The Pokémon being encountered</td>
+            <td>NamedAPIResource (Pokemon)</td>
+        </tr>
+        <tr>
+            <td>version_details</td>
+            <td>A list of versions and encounters with Pokémon that might happen in the referenced location area</td>
+            <td>list VersionEncounterDetail</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PalParkArea</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this pal park area resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this pal park area resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this pal park area listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>pokemon_encounters</td>
+            <td>A list of Pokémon encountered in thi pal park area along with details</td>
+            <td>list PalParkEncounterSpecies</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PalParkEncounterSpecies</h4>
+    <table>
+        <tr>
+            <td>base_score</td>
+            <td>The base score given to the player when this Pokémon is caught during a pal park run</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>rate</td>
+            <td>The base rate for encountering this Pokémon in this pal park area</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>pokemon_species</td>
+            <td>The Pokémon species being encountered</td>
+            <td>NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Region</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this region resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this region resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>locations</td>
+            <td>A list of locations that can be found in this region</td>
+            <td>list NamedAPIResource (Location)</td>
+        </tr>
+        <tr>
+            <td>main_generation</td>
+            <td>The generation this region was introduced in</td>
+            <td>NamedAPIResource (Generation)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this region listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>pokedexes</td>
+            <td>A list of pokédexes that catalogue Pokémon in this region</td>
+            <td>list NamedAPIResource (Pokedex)</td>
+        </tr>
+        <tr>
+            <td>version_groups</td>
+            <td>A list of version groups where this region can be visited</td>
+            <td>list NamedAPIResource (VersionGroup)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Ability</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this ability resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this ability resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>is_main_series</td>
+            <td>Whether or not this ability originated in the main series of the video games</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>generation</td>
+            <td>The generation this ability originated in</td>
+            <td>NamedAPIResource (Generation)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this ability listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>effect_entries</td>
+            <td>The effect of this ability listed in different languages</td>
+            <td>list VerboseEffect</td>
+        </tr>
+        <tr>
+            <td>effect_changes</td>
+            <td>The list of previous effects this ability has had across version groups</td>
+            <td>list AbilityEffectChange</td>
+        </tr>
+        <tr>
+            <td>flavor_text_entries</td>
+            <td>The flavor text of this ability listed in different languages</td>
+            <td>list AbilityFlavorText</td>
+        </tr>
+        <tr>
+            <td>pokemon</td>
+            <td>A list of Pokémon that could potentially have this ability</td>
+            <td>list AbilityPokemon</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>AbilityEffectChange</h4>
+    <table>
+        <tr>
+            <td>effect_entries</td>
+            <td>The previous effect of this ability listed in different languages</td>
+            <td>list Effect</td>
+        </tr>
+        <tr>
+            <td>version_group</td>
+            <td>The version group in which the previous effect of this ability originated</td>
+            <td>NamedAPIResource (VersionGroup)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>AbilityFlavorText</h4>
+    <table>
+        <tr>
+            <td>flavor_text</td>
+            <td>The localized name for an API resource in a specific language</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>language</td>
+            <td>The language this name is in</td>
+            <td>NamedAPIResource (Language)</td>
+        </tr>
+        <tr>
+            <td>version_group</td>
+            <td>The version group that uses this flavor text</td>
+            <td>NamedAPIResource (VersionGroup)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>AbilityPokemon</h4>
+    <table>
+        <tr>
+            <td>is_hidden</td>
+            <td>Whether or not this a hidden ability for the referenced Pokémon</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>slot</td>
+            <td>Pokémon have 3 ability 'slots' which hold references to possible abilities they could have. This is the slot of this ability for the referenced pokemon.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>pokemon</td>
+            <td>The Pokémon this ability could belong to</td>
+            <td>NamedAPIResource (Pokemon)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Characteristic</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this characteristic resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>gene_modulo</td>
+            <td>The remainder of the highest stat/IV divided by 5</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>possible_values</td>
+            <td>The possible values of the highest stat that would result in a Pokémon recieving this characteristic when divided by 5</td>
+            <td>list integer</td>
+        </tr>
+        <tr>
+            <td>descriptions</td>
+            <td>The descriptions of this characteristic listed in different languages</td>
+            <td>list Description</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>EggGroup</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this egg group resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this egg group resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this egg group listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>pokemon_species</td>
+            <td>A list of all Pokémon species that are members of this egg group</td>
+            <td>list NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Gender</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this gender resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this gender resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>pokemon_species_details</td>
+            <td>A list of Pokémon species that can be this gender and how likely it is that they will be</td>
+            <td>list PokemonSpeciesGender</td>
+        </tr>
+        <tr>
+            <td>required_for_evolution</td>
+            <td>A list of Pokémon species that required this gender in order for a Pokémon to evolve into them</td>
+            <td>list NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonSpeciesGender</h4>
+    <table>
+        <tr>
+            <td>rate</td>
+            <td>The chance of this Pokémon being female, in eighths; or -1 for genderless</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>pokemon_species</td>
+            <td>A Pokémon species that can be the referenced gender</td>
+            <td>NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Growth Rate</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this gender resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this gender resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>formula</td>
+            <td>The formula used to calculate the rate at which the Pokémon species gains level</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>descriptions</td>
+            <td>The descriptions of this characteristic listed in different languages</td>
+            <td>list Description</td>
+        </tr>
+        <tr>
+            <td>levels</td>
+            <td>A list of levels and the amount of experienced needed to atain them based on this growth rate</td>
+            <td>list GrowthRateExperienceLevel</td>
+        </tr>
+        <tr>
+            <td>pokemon_species</td>
+            <td>A list of Pokémon species that gain levels at this growth rate</td>
+            <td>list NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>GrowthRateExperienceLevel</h4>
+    <table>
+        <tr>
+            <td>level</td>
+            <td>The level gained</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>experience</td>
+            <td>The amount of experience required to reach the referenced level</td>
+            <td>integer</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Nature</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this nature resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this nature resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>decreased_stat</td>
+            <td>The stat decreased by 10% in Pokémon with this nature</td>
+            <td>NamedAPIResource (Stat)</td>
+        </tr>
+        <tr>
+            <td>increased_stat</td>
+            <td>The stat increased by 10% in Pokémon with this nature</td>
+            <td>NamedAPIResource (Stat)</td>
+        </tr>
+        <tr>
+            <td>hates_flavor</td>
+            <td>The flavor hated by Pokémon with this nature</td>
+            <td>NamedAPIResource (BerryFlavor)</td>
+        </tr>
+        <tr>
+            <td>likes_flavor</td>
+            <td>The flavor liked by Pokémon with this nature</td>
+            <td>NamedAPIResource (BerryFlavor)</td>
+        </tr>
+        <tr>
+            <td>pokeathlon_stat_changes</td>
+            <td>A list of Pokéathlon stats this nature effects and how much it effects them</td>
+            <td>list NatureStatChange</td>
+        </tr>
+        <tr>
+            <td>move_battle_style_preferences</td>
+            <td>A list of battle styles and how likely a Pokémon with this nature is to use them in the Battle Palace or Battle Tent.</td>
+            <td>list MoveBattleStylePreference</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this nature listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>NatureStatChange</h4>
+    <table>
+        <tr>
+            <td>max_change</td>
+            <td>The amount of change</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>pokeathlon_stat</td>
+            <td>The stat being affected</td>
+            <td>NamedAPIResource (PokeathlonStat)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>MoveBattleStylePreference</h4>
+    <table>
+        <tr>
+            <td>low_hp_preference</td>
+            <td>Chance of using the move, in percent, if HP is under one half</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>high_hp_preference</td>
+            <td>Chance of using the move, in percent, if HP is over one half</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>move_battle_style</td>
+            <td>The move battle style</td>
+            <td>NamedAPIResource (MoveBattleStyle)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokeathlonStat</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this Pokéathlon stat resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this Pokéathlon stat resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this Pokéathlon stat listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>affecting_natures</td>
+            <td>A detail of natures which affect this Pokéathlon stat positively or negatively</td>
+            <td>NaturePokeathlonStatAffectSets</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>NaturePokeathlonStatAffectSets</h4>
+    <table>
+        <tr>
+            <td>increase</td>
+            <td>A list of natures and how they change the referenced Pokéathlon stat</td>
+            <td>list NaturePokeathlonStatAffect</td>
+        </tr>
+        <tr>
+            <td>decrease</td>
+            <td>A list of natures and how they change the referenced Pokéathlon stat</td>
+            <td>list NaturePokeathlonStatAffect</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>NaturePokeathlonStatAffect</h4>
+    <table>
+        <tr>
+            <td>max_change</td>
+            <td>The maximum amount of change to the referenced Pokéathlon stat</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>nature</td>
+            <td>The nature causing the change</td>
+            <td>NamedAPIResource (Nature)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Pokemon</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this Pokémon resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this Pokémon resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>base_experience</td>
+            <td>The base experience gained for defeating this Pokémon</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>The height of this Pokémon</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>is_default</td>
+            <td>Set for exactly one Pokémon used as the default for each species</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>order</td>
+            <td>Order for sorting. Almost national order, except families are grouped together.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>weight</td>
+            <td>The weight of this Pokémon</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>abilities</td>
+            <td>A list of abilities this Pokémon could potentially have</td>
+            <td>list PokemonAbility</td>
+        </tr>
+        <tr>
+            <td>forms</td>
+            <td>A list of forms this Pokémon can take on</td>
+            <td>list NamedAPIResource (PokemonForm)</td>
+        </tr>
+        <tr>
+            <td>game_indices</td>
+            <td>A list of game indices relevent to Pokémon item by generation</td>
+            <td>list VersionGameIndex</td>
+        </tr>
+        <tr>
+            <td>held_items</td>
+            <td>A list of items this Pokémon may be holding when encountered</td>
+            <td>list PokemonHeldItem</td>
+        </tr>
+        <tr>
+            <td>location_area_encounters</td>
+            <td>A link to a list of location areas as well as encounter details pertaining to specific versions</td>
+            <td>string (URL to list LocationAreaEncounter)</td>
+        </tr>
+        <tr>
+            <td>moves</td>
+            <td>A list of moves along with learn methods and level details pertaining to specific version groups</td>
+            <td>list PokemonMove</td>
+        </tr>
+        <tr>
+            <td>sprites</td>
+            <td>A set of sprites used to depict this Pokémon in the game</td>
+            <td>PokemonSprites</td>
+        </tr>
+        <tr>
+            <td>species</td>
+            <td>The species this Pokémon belongs to</td>
+            <td>NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+        <tr>
+            <td>stats</td>
+            <td>A list of base stat values for this Pokémon</td>
+            <td>list PokemonStat</td>
+        </tr>
+        <tr>
+            <td>types</td>
+            <td>A list of details showing types this Pokémon has</td>
+            <td>list PokemonType</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonAbility</h4>
+    <table>
+        <tr>
+            <td>is_hidden</td>
+            <td>Whether or not this is a hidden ability</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>slot</td>
+            <td>The slot this ability occupies in this Pokémon species</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>ability</td>
+            <td>The ability the Pokémon may have</td>
+            <td>NamedAPIResource (Ability)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonType</h4>
+    <table>
+        <tr>
+            <td>slot</td>
+            <td>The order the Pokémon's types are listed in</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>The type the referenced Pokémon has</td>
+            <td>NamedAPIResource (Type)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonHeldItem</h4>
+    <table>
+        <tr>
+            <td>item</td>
+            <td>The item the referenced Pokémon holds</td>
+            <td>NamedAPIResource (Item)</td>
+        </tr>
+        <tr>
+            <td>version_details</td>
+            <td>The details of the different versions in which the item is held</td>
+            <td>list PokemonHeldItemVersion</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonHeldItemVersion</h4>
+    <table>
+        <tr>
+            <td>version</td>
+            <td>The version in which the item is held</td>
+            <td>NamedAPIResource (Version)</td>
+        </tr>
+        <tr>
+            <td>rarity</td>
+            <td>How often the item is held</td>
+            <td>integer</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonMove</h4>
+    <table>
+        <tr>
+            <td>move</td>
+            <td>The move the Pokémon can learn</td>
+            <td>NamedAPIResource (Move)</td>
+        </tr>
+        <tr>
+            <td>version_group_details</td>
+            <td>The details of the version in which the Pokémon can learn the move</td>
+            <td>list PokemonMoveVersion</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonMoveVersion</h4>
+    <table>
+        <tr>
+            <td>move_learn_method</td>
+            <td>The method by which the move is learned</td>
+            <td>NamedAPIResource (MoveLearnMethod)</td>
+        </tr>
+        <tr>
+            <td>version_group</td>
+            <td>The version group in which the move is learned</td>
+            <td>NamedAPIResource (VersionGroup)</td>
+        </tr>
+        <tr>
+            <td>level_learned_at</td>
+            <td>The minimum level to learn the move</td>
+            <td>integer</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonStat</h4>
+    <table>
+        <tr>
+            <td>stat</td>
+            <td>The stat the Pokémon has</td>
+            <td>NamedAPIResource (Stat)</td>
+        </tr>
+        <tr>
+            <td>effort</td>
+            <td>The effort points (EV) the Pokémon has in the stat</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>base_stat</td>
+            <td>The base value of the stst</td>
+            <td>integer</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonSprites</h4>
+    <table>
+        <tr>
+            <td>front_default</td>
+            <td>The default depiction of this Pokémon from the front in battle</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>front_shiny</td>
+            <td>The shiny depiction of this Pokémon from the front in battle</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>front_female</td>
+            <td>The female depiction of this Pokémon from the front in battle</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>front_shiny_female</td>
+            <td>The shiny female depiction of this Pokémon from the front in battle</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>back_default</td>
+            <td>The default depiction of this Pokémon from the back in battle</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>back_shiny</td>
+            <td>The shiny depiction of this Pokémon from the back in battle</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>back_female</td>
+            <td>The female depiction of this Pokémon from the back in battle</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>back_shiny_female</td>
+            <td>The shiny female depiction of this Pokémon from the back in battle</td>
+            <td>string</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>LocationAreaEncounter</h4>
+    <table>
+        <tr>
+            <td>location_area</td>
+            <td>The location area the referenced Pokémon can be encountered in</td>
+            <td>NamedAPIResource (LocationArea)</td>
+        </tr>
+        <tr>
+            <td>version_details</td>
+            <td>A list of versions and encounters with the referenced Pokémon that might happen</td>
+            <td>list VersionEncounterDetail</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonColor</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this Pokémon color resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this Pokémon color resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this Pokémon color listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>pokemon_species</td>
+            <td>A list of the Pokémon species that have this color</td>
+            <td>list NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonForm</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this Pokémon form resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this Pokémon form resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>order</td>
+            <td>The order in which forms should be sorted within all forms. Multiple forms may have equal order, in which case they should fall back on sorting by name.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>form_order</td>
+            <td>The order in which forms should be sorted within a species' forms</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>is_default</td>
+            <td>True for exactly one form used as the default for each Pokémon</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>is_battle_only</td>
+            <td>Whether or not this form can only happen during battle</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>is_mega</td>
+            <td>Whether or not this form requires mega evolution</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>form_name</td>
+            <td>The name of this form</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>pokemon</td>
+            <td>The Pokémon that can take on this form</td>
+            <td>NamedAPIResource (Pokemon)</td>
+        </tr>
+        <tr>
+            <td>sprites</td>
+            <td>A set of sprites used to depict this Pokémon form in the game</td>
+            <td>PokemonFormSprites</td>
+        </tr>
+        <tr>
+            <td>version_group</td>
+            <td>The version group this Pokémon form was introduced in</td>
+            <td>NamedAPIResource (VersionGroup)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The form specific full name of this Pokémon form, or empty if the form does not have a specific name</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>form_names</td>
+            <td>The form specific form name of this Pokémon form, or empty if the form does not have a specific name</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonFormSprites</h4>
+    <table>
+        <tr>
+            <td>front_default</td>
+            <td>The default depiction of this Pokémon form from the front in battle</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>front_shiny</td>
+            <td>The shiny depiction of this Pokémon form from the front in battle</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>back_default</td>
+            <td>The default depiction of this Pokémon form from the back in battle</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>back_shiny</td>
+            <td>The shiny depiction of this Pokémon form from the back in battle</td>
+            <td>string</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonHabitat</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this Pokémon habitat resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this Pokémon habitat resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this Pokémon habitat listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>pokemon_species</td>
+            <td>A list of the Pokémon species that can be found in this habitat</td>
+            <td>list NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonShape</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this Pokémon shape resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this Pokémon shape resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>awesome_names</td>
+            <td>The "scientific" name of this Pokémon shape listed in different languages</td>
+            <td>list AwesomeName</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this Pokémon shape listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>pokemon_species</td>
+            <td>A list of the Pokémon species that have this shape</td>
+            <td>list NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>AwesomeName</h4>
+    <table>
+        <tr>
+            <td>awesome_name</td>
+            <td>The localized "scientific" name for an API resource in a specific language</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>language</td>
+            <td>The language this "scientific" name is in</td>
+            <td>NamedAPIResource (Language)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonSpecies</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this Pokémon species resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this Pokémon species resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>order</td>
+            <td>The order in which species should be sorted. Based on National Dex order, except families are grouped together and sorted by stage.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>gender_rate</td>
+            <td>The chance of this Pokémon being female, in eighths; or -1 for genderless</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>capture_rate</td>
+            <td>The base capture rate; up to 255. The higher the number, the easier the catch.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>base_happiness</td>
+            <td>The happiness when caught by a normal Pokéball; up to 255. The higher the number, the happier the Pokémon.</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>is_baby</td>
+            <td>Whether or not this is a baby Pokémon</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>hatch_counter</td>
+            <td>Initial hatch counter: one must walk 255 × (hatch_counter + 1) steps before this Pokémon's egg hatches, unless utilizing bonuses like Flame Body's</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>has_gender_differences</td>
+            <td>Whether or not this Pokémon has visual gender differences</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>forms_switchable</td>
+            <td>Whether or not this Pokémon has multiple forms and can switch between them</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>growth_rate</td>
+            <td>The rate at which this Pokémon species gains levels</td>
+            <td>NamedAPIResource (GrowthRate)</td>
+        </tr>
+        <tr>
+            <td>pokedex_numbers</td>
+            <td>A list of Pokedexes and the indexes reserved within them for this Pokémon species</td>
+            <td>list PokemonSpeciesDexEntry</td>
+        </tr>
+        <tr>
+            <td>egg_groups</td>
+            <td>A list of egg groups this Pokémon species is a member of</td>
+            <td>list NamedAPIResource (EggGroup)</td>
+        </tr>
+        <tr>
+            <td>color</td>
+            <td>The color of this Pokémon for gimmicky Pokédex search</td>
+            <td>NamedAPIResource (PokemonColor)</td>
+        </tr>
+        <tr>
+            <td>shape</td>
+            <td>The shape of this Pokémon for gimmicky Pokédex search</td>
+            <td>NamedAPIResource (PokemonShape)</td>
+        </tr>
+        <tr>
+            <td>evolves_from_species</td>
+            <td>The Pokémon species that evolves into this Pokemon_species</td>
+            <td>NamedAPIResource (PokemonSpecies)</td>
+        </tr>
+        <tr>
+            <td>evolution_chain</td>
+            <td>The evolution chain this Pokémon species is a member of</td>
+            <td>APIResource (EvolutionChain)</td>
+        </tr>
+        <tr>
+            <td>habitat</td>
+            <td>The habitat this Pokémon species can be encountered in</td>
+            <td>NamedAPIResource (PokemonHabitat)</td>
+        </tr>
+        <tr>
+            <td>generation</td>
+            <td>The generation this Pokémon species was introduced in</td>
+            <td>NamedAPIResource (Generation)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this Pokémon species listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>pal_park_encounters</td>
+            <td>A list of encounters that can be had with this Pokémon species in pal park</td>
+            <td>list PalParkEncounterArea</td>
+        </tr>
+        <tr>
+            <td>flavor_text_entries</td>
+            <td>A list of flavor text entries for this Pokémon species</td>
+            <td>list FlavorText</td>
+        </tr>
+        <tr>
+            <td>form_descriptions</td>
+            <td>Descriptions of different forms Pokémon take on within the Pokémon species</td>
+            <td>list Description</td>
+        </tr>
+        <tr>
+            <td>genera</td>
+            <td>The genus of this Pokémon species listed in multiple languages</td>
+            <td>list Genus</td>
+        </tr>
+        <tr>
+            <td>varieties</td>
+            <td>A list of the Pokémon that exist within this Pokémon species</td>
+            <td>list PokemonSpeciesVariety</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Genus</h4>
+    <table>
+        <tr>
+            <td>genus</td>
+            <td>The localized genus for the referenced Pokémon species</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>language</td>
+            <td>The language this genus is in</td>
+            <td>NamedAPIResource (Language)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonSpeciesDexEntry</h4>
+    <table>
+        <tr>
+            <td>entry_number</td>
+            <td>The index number within the Pokédex</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>pokedex</td>
+            <td>The Pokédex the referenced Pokémon species can be found in</td>
+            <td>NamedAPIResource (Pokedex)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PalParkEncounterArea</h4>
+    <table>
+        <tr>
+            <td>base_score</td>
+            <td>The base score given to the player when the referenced Pokémon is caught during a pal park run</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>rate</td>
+            <td>The base rate for encountering the referenced Pokémon in this pal park area</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>area</td>
+            <td>The pal park area where this encounter happens</td>
+            <td>NamedAPIResource (PalParkArea)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>PokemonSpeciesVariety</h4>
+    <table>
+        <tr>
+            <td>is_default</td>
+            <td>Whether this variety is the default variety</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>pokemon</td>
+            <td>The Pokémon variety</td>
+            <td>NamedAPIResource (Pokemon)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Stat</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this stat resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this stat resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>game_index</td>
+            <td>ID the games use for this stat</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>is_battle_only</td>
+            <td>Whether this stat only exists within a battle</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>affecting_moves</td>
+            <td>A detail of moves which affect this stat positively or negatively</td>
+            <td>MoveStatAffectSets</td>
+        </tr>
+        <tr>
+            <td>affecting_natures</td>
+            <td>A detail of natures which affect this stat positively or negatively</td>
+            <td>NatureStatAffectSets</td>
+        </tr>
+        <tr>
+            <td>characteristics</td>
+            <td>A list of characteristics that are set on a Pokémon when its highest base stat is this stat</td>
+            <td>list APIResource (Characteristic)</td>
+        </tr>
+        <tr>
+            <td>move_damage_class</td>
+            <td>The class of damage this stat is directly related to</td>
+            <td>NamedAPIResource (MoveDamageClass)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this region listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>MoveStatAffectSets</h4>
+    <table>
+        <tr>
+            <td>increase</td>
+            <td>A list of moves and how they change the referenced stat</td>
+            <td>list MoveStatAffect</td>
+        </tr>
+        <tr>
+            <td>decrease</td>
+            <td>A list of moves and how they change the referenced stat</td>
+            <td>list MoveStatAffect</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>MoveStatAffect</h4>
+    <table>
+        <tr>
+            <td>change</td>
+            <td>The maximum amount of change to the referenced stat</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>move</td>
+            <td>The move causing the change</td>
+            <td>NamedAPIResource (Move)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>NatureStatAffectSets</h4>
+    <table>
+        <tr>
+            <td>increase</td>
+            <td>A list of natures and how they change the referenced stat</td>
+            <td>list NamedAPIResource (Nature)</td>
+        </tr>
+        <tr>
+            <td>decrease</td>
+            <td>A list of nature sand how they change the referenced stat</td>
+            <td>list NamedAPIResource (Nature)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Type</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this type resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this type resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>damage_relations</td>
+            <td>A detail of how effective this type is toward others and vice versa</td>
+            <td>TypeRelations</td>
+        </tr>
+        <tr>
+            <td>game_indices</td>
+            <td>A list of game indices relevent to this item by generation</td>
+            <td>list GenerationGameIndex</td>
+        </tr>
+        <tr>
+            <td>generation</td>
+            <td>The generation this type was introduced in</td>
+            <td>NamedAPIResource (Generation)</td>
+        </tr>
+        <tr>
+            <td>move_damage_class</td>
+            <td>The class of damage inflicted by this type</td>
+            <td>NamedAPIResource (MoveDamageClass)</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this type listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+        <tr>
+            <td>pokemon</td>
+            <td>A list of details of Pokémon that have this type</td>
+            <td>list TypePokemon</td>
+        </tr>
+        <tr>
+            <td>moves</td>
+            <td>A list of moves that have this type</td>
+            <td>list NamedAPIResource (Move)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>TypePokemon</h4>
+    <table>
+        <tr>
+            <td>slot</td>
+            <td>The order the Pokémon's types are listed in</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>pokemon</td>
+            <td>The Pokémon that has the referenced type</td>
+            <td>NamedAPIResource (Pokemon)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>TypeRelations</h4>
+    <table>
+        <tr>
+            <td>no_damage_to</td>
+            <td>A list of types this type has no effect on</td>
+            <td>list NamedAPIResource (Type)</td>
+        </tr>
+        <tr>
+            <td>half_damage_to</td>
+            <td>A list of types this type is not very effect against</td>
+            <td>list NamedAPIResource (Type)</td>
+        </tr>
+        <tr>
+            <td>double_damage_to</td>
+            <td>A list of types this type is very effect against</td>
+            <td>list NamedAPIResource (Type)</td>
+        </tr>
+        <tr>
+            <td>no_damage_from</td>
+            <td>A list of types that have no effect on this type</td>
+            <td>list NamedAPIResource (Type)</td>
+        </tr>
+        <tr>
+            <td>half_damage_from</td>
+            <td>A list of types that are not very effective against this type</td>
+            <td>list NamedAPIResource (Type)</td>
+        </tr>
+        <tr>
+            <td>double_damage_from</td>
+            <td>A list of types that are very effective against this type</td>
+            <td>list NamedAPIResource (Type)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Language</h4>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>The identifier for this language resource</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>The name for this language resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>official</td>
+            <td>Whether or not the games are published in this language</td>
+            <td>boolean</td>
+        </tr>
+        <tr>
+            <td>iso639</td>
+            <td>The two-letter code of the country where this language is spoken. Note that it is not unique.</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>iso3166</td>
+            <td>The two-letter code of the language. Note that it is not unique.</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>names</td>
+            <td>The name of this language listed in different languages</td>
+            <td>list Name</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>APIResource</h4>
+    <table>
+        <tr>
+            <td>url</td>
+            <td>The URL of the referenced resource</td>
+            <td>string</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Description</h4>
+    <table>
+        <tr>
+            <td>description</td>
+            <td>The localized description for an API resource in a specific language</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>language</td>
+            <td>The language this name is in</td>
+            <td>NamedAPIResource (Language)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Effect</h4>
+    <table>
+        <tr>
+            <td>effect</td>
+            <td>The localized effect text for an API resource in a specific language</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>language</td>
+            <td>The language this effect is in</td>
+            <td>NamedAPIResource (Language)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Encounter</h4>
+    <table>
+        <tr>
+            <td>min_level</td>
+            <td>The lowest level the Pokémon could be encountered at</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>max_level</td>
+            <td>The highest level the Pokémon could be encountered at</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>condition_values</td>
+            <td>A list of condition values that must be in effect for this encounter to occur</td>
+            <td>list NamedAPIResource (EncounterConditionValue)</td>
+        </tr>
+        <tr>
+            <td>chance</td>
+            <td>percent chance that this encounter will occur</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>method</td>
+            <td>The method by which this encounter happens</td>
+            <td>NamedAPIResource (EncounterMethod)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>FlavorText</h4>
+    <table>
+        <tr>
+            <td>flavor_text</td>
+            <td>The localized flavor text for an API resource in a specific language</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>language</td>
+            <td>The language this name is in</td>
+            <td>NamedAPIResource (Language)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>GenerationGameIndex</h4>
+    <table>
+        <tr>
+            <td>game_index</td>
+            <td>The internal id of an API resource within game data</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>generation</td>
+            <td>The generation relevent to this game index</td>
+            <td>NamedAPIResource (Generation)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>MachineVersionDetail</h4>
+    <table>
+        <tr>
+            <td>machine</td>
+            <td>The machine that teaches a move from an item</td>
+            <td>APIResource (Machine)</td>
+        </tr>
+        <tr>
+            <td>version_group</td>
+            <td>The version group of this specific machine</td>
+            <td>NamedAPIResource (VersionGroup)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>Name</h4>
+    <table>
+        <tr>
+            <td>name</td>
+            <td>The localized name for an API resource in a specific language</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>language</td>
+            <td>The language this name is in</td>
+            <td>NamedAPIResource (Language)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>NamedAPIResource</h4>
+    <table>
+        <tr>
+            <td>name</td>
+            <td>The name of the referenced resource</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>url</td>
+            <td>The URL of the referenced resource</td>
+            <td>string</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>VerboseEffect</h4>
+    <table>
+        <tr>
+            <td>effect</td>
+            <td>The localized effect text for an API resource in a specific language</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>short_effect</td>
+            <td>The localized effect text in brief</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>language</td>
+            <td>The language this effect is in</td>
+            <td>NamedAPIResource (Language)</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>VersionEncounterDetail</h4>
+    <table>
+        <tr>
+            <td>version</td>
+            <td>The game version this encounter happens in</td>
+            <td>NamedAPIResource</td>
+        </tr>
+        <tr>
+            <td>max_chance</td>
+            <td>The total percentage of all encounter potential</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>encounter_details</td>
+            <td>A list of encounters and their specifics</td>
+            <td>list Encounter</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>VersionGameIndex</h4>
+    <table>
+        <tr>
+            <td>game_index</td>
+            <td>The internal id of an API resource within game data</td>
+            <td>integer</td>
+        </tr>
+        <tr>
+            <td>version</td>
+            <td>The version relevent to this game index</td>
+            <td>NamedAPIResource</td>
+        </tr>
+    </table>
+
+</Section>
+<Section>
+    <h4>VersionGroupFlavorText</h4>
+    <table>
+        <tr>
+            <td>text</td>
+            <td>The localized name for an API resource in a specific language</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>language</td>
+            <td>The language this name is in</td>
+            <td>NamedAPIResource (Language)</td>
+        </tr>
+        <tr>
+            <td>version_group</td>
+            <td>The version group which uses this flavor text</td>
+            <td>NamedAPIResource (VersionGroup)</td>
+        </tr>
+    </table>
+</Section>

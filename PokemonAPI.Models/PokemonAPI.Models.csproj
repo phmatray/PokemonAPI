@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26F297CE-3C92-4AF6-BA20-70E4FC5A9D2B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PokemonAPI.Models</RootNamespace>
+    <AssemblyName>PokemonAPI.Models</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Rsc\Pokemon\Abilities\Ability.cs" />
+    <Compile Include="Rsc\Pokemon\Abilities\AbilityEffectChange.cs" />
+    <Compile Include="Rsc\Pokemon\Abilities\AbilityFlavorText.cs" />
+    <Compile Include="Rsc\Pokemon\Abilities\AbilityPokemon.cs" />
+    <Compile Include="Rsc\_Common\APIResource.cs" />
+    <Compile Include="Rsc\Pokemon\PokemonShapes\AwesomeName.cs" />
+    <Compile Include="Rsc\Berries\Berries\Berry.cs" />
+    <Compile Include="Rsc\Berries\BerryFirmnesses\BerryFirmness.cs" />
+    <Compile Include="Rsc\Berries\BerryFlavors\BerryFlavor.cs" />
+    <Compile Include="Rsc\Berries\Berries\BerryFlavorMap.cs" />
+    <Compile Include="Rsc\Evolutions\EvolutionChains\ChainLink.cs" />
+    <Compile Include="Rsc\Pokemon\Characteristics\Characteristic.cs" />
+    <Compile Include="Rsc\_Common\FlavorText.cs" />
+    <Compile Include="Rsc\_ResourceLists\APIResourceList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rsc\Moves\Moves\ContestComboDetail.cs" />
+    <Compile Include="Rsc\Moves\Moves\ContestComboSets.cs" />
+    <Compile Include="Rsc\Contests\ContestEffects\ContestEffect.cs" />
+    <Compile Include="Rsc\Contests\ContestTypes\ContestName.cs" />
+    <Compile Include="Rsc\Contests\ContestTypes\ContestType.cs" />
+    <Compile Include="Rsc\_Common\Description.cs" />
+    <Compile Include="Rsc\_Common\Effect.cs" />
+    <Compile Include="Rsc\Pokemon\EggGroups\EggGroup.cs" />
+    <Compile Include="Rsc\_Common\Encounter.cs" />
+    <Compile Include="Rsc\Encounters\EncounterConditions\EncounterCondition.cs" />
+    <Compile Include="Rsc\Encounters\EncounterConditionValues\EncounterConditionValue.cs" />
+    <Compile Include="Rsc\Encounters\EncounterMethods\EncounterMethod.cs" />
+    <Compile Include="Rsc\Locations\LocationAreas\EncounterMethodRate.cs" />
+    <Compile Include="Rsc\Locations\LocationAreas\EncounterVersionDetails.cs" />
+    <Compile Include="Rsc\Evolutions\EvolutionChains\EvolutionChain.cs" />
+    <Compile Include="Rsc\Evolutions\EvolutionChains\EvolutionDetail.cs" />
+    <Compile Include="Rsc\Evolutions\EvolutionTriggers\EvolutionTrigger.cs" />
+    <Compile Include="Rsc\Berries\BerryFlavors\FlavorBerryMap.cs" />
+    <Compile Include="Rsc\_Common\FlavorTextVersion.cs" />
+    <Compile Include="Rsc\Pokemon\Genders\Gender.cs" />
+    <Compile Include="Rsc\Games\Generations\Generation.cs" />
+    <Compile Include="Rsc\_Common\GenerationGameIndex.cs" />
+    <Compile Include="Rsc\Pokemon\PokemonSpecies\Genus.cs" />
+    <Compile Include="Rsc\Pokemon\GrowthRates\GrowthRate.cs" />
+    <Compile Include="Rsc\Pokemon\GrowthRates\GrowthRateExperienceLevel.cs" />
+    <Compile Include="Rsc\Items\Items\Item.cs" />
+    <Compile Include="Rsc\Items\ItemAttributes\ItemAttribute.cs" />
+    <Compile Include="Rsc\Items\ItemCategories\ItemCategory.cs" />
+    <Compile Include="Rsc\Items\ItemFlingEffects\ItemFlingEffect.cs" />
+    <Compile Include="Rsc\Items\Items\ItemHolderPokemon.cs" />
+    <Compile Include="Rsc\Items\Items\ItemHolderPokemonVersionDetail.cs" />
+    <Compile Include="Rsc\Items\ItemPockets\ItemPocket.cs" />
+    <Compile Include="Rsc\Items\Items\ItemSprites.cs" />
+    <Compile Include="Rsc\Utility\Language.cs" />
+    <Compile Include="Rsc\Locations\Locations\Location.cs" />
+    <Compile Include="Rsc\Locations\LocationAreas\LocationArea.cs" />
+    <Compile Include="Rsc\Pokemon\Pokemon\LocationAreaEncounter.cs" />
+    <Compile Include="Rsc\Machines\Machines\Machine.cs" />
+    <Compile Include="Rsc\_Common\MachineVersionDetail.cs" />
+    <Compile Include="Rsc\Moves\Moves\Move.cs" />
+    <Compile Include="Rsc\Moves\MoveAilments\MoveAilment.cs" />
+    <Compile Include="Rsc\Moves\MoveBattleStyles\MoveBattleStyle.cs" />
+    <Compile Include="Rsc\Pokemon\Natures\MoveBattleStylePreference.cs" />
+    <Compile Include="Rsc\Moves\MoveCategories\MoveCategory.cs" />
+    <Compile Include="Rsc\Moves\MoveDamageClasses\MoveDamageClass.cs" />
+    <Compile Include="Rsc\Moves\Moves\MoveFlavorText.cs" />
+    <Compile Include="Rsc\Moves\MoveLearnMethods\MoveLearnMethod.cs" />
+    <Compile Include="Rsc\Moves\Moves\MoveMetaData.cs" />
+    <Compile Include="Rsc\Pokemon\Stats\MoveStatAffect.cs" />
+    <Compile Include="Rsc\Pokemon\Stats\MoveStatAffectSets.cs" />
+    <Compile Include="Rsc\Moves\Moves\MoveStatChange.cs" />
+    <Compile Include="Rsc\Moves\MoveTargets\MoveTarget.cs" />
+    <Compile Include="Rsc\_Common\Name.cs" />
+    <Compile Include="Rsc\_Common\NamedAPIResource.cs" />
+    <Compile Include="Rsc\_ResourceLists\NamedAPIResourceList.cs" />
+    <Compile Include="Rsc\Pokemon\Natures\Nature.cs" />
+    <Compile Include="Rsc\Pokemon\PokeathlonStats\NaturePokeathlonStatAffect.cs" />
+    <Compile Include="Rsc\Pokemon\PokeathlonStats\NaturePokeathlonStatAffectSets.cs" />
+    <Compile Include="Rsc\Pokemon\Stats\NatureStatAffectSets.cs" />
+    <Compile Include="Rsc\Pokemon\Natures\NatureStatChange.cs" />
+    <Compile Include="Rsc\Locations\PalParkAreas\PalParkArea.cs" />
+    <Compile Include="Rsc\Pokemon\PokemonSpecies\PalParkEncounterArea.cs" />
+    <Compile Include="Rsc\Locations\PalParkAreas\PalParkEncounterSpecies.cs" />
+    <Compile Include="Rsc\Moves\Moves\PastMoveStatValues.cs" />
+    <Compile Include="Rsc\Pokemon\PokeathlonStats\PokeathlonStat.cs" />
+    <Compile Include="Rsc\Games\Pokedexes\Pokedex.cs" />
+    <Compile Include="Rsc\Pokemon\Pokemon\Pokemon.cs" />
+    <Compile Include="Rsc\Pokemon\Pokemon\PokemonAbility.cs" />
+    <Compile Include="Rsc\Pokemon\PokemonColors\PokemonColor.cs" />
+    <Compile Include="Rsc\Locations\LocationAreas\PokemonEncounter.cs" />
+    <Compile Include="Rsc\Games\Pokedexes\PokemonEntry.cs" />
+    <Compile Include="Rsc\Pokemon\PokemonForms\PokemonForm.cs" />
+    <Compile Include="Rsc\Pokemon\PokemonForms\PokemonFormSprites.cs" />
+    <Compile Include="Rsc\Pokemon\PokemonHabitats\PokemonHabitat.cs" />
+    <Compile Include="Rsc\Pokemon\Pokemon\PokemonHeldItem.cs" />
+    <Compile Include="Rsc\Pokemon\Pokemon\PokemonHeldItemVersion.cs" />
+    <Compile Include="Rsc\Pokemon\Pokemon\PokemonMove.cs" />
+    <Compile Include="Rsc\Pokemon\Pokemon\PokemonMoveVersion.cs" />
+    <Compile Include="Rsc\Pokemon\PokemonShapes\PokemonShape.cs" />
+    <Compile Include="Rsc\Pokemon\PokemonSpecies\PokemonSpecies.cs" />
+    <Compile Include="Rsc\Pokemon\PokemonSpecies\PokemonSpeciesDexEntry.cs" />
+    <Compile Include="Rsc\Pokemon\Genders\PokemonSpeciesGender.cs" />
+    <Compile Include="Rsc\Pokemon\PokemonSpecies\PokemonSpeciesVariety.cs" />
+    <Compile Include="Rsc\Pokemon\Pokemon\PokemonSprites.cs" />
+    <Compile Include="Rsc\Pokemon\Pokemon\PokemonStat.cs" />
+    <Compile Include="Rsc\Pokemon\Pokemon\PokemonType.cs" />
+    <Compile Include="Rsc\Locations\Regions\Region.cs" />
+    <Compile Include="Rsc\Pokemon\Stats\Stat.cs" />
+    <Compile Include="Rsc\Contests\SuperContestEffects\SuperContestEffect.cs" />
+    <Compile Include="Rsc\Pokemon\Types\Type.cs" />
+    <Compile Include="Rsc\Pokemon\Types\TypePokemon.cs" />
+    <Compile Include="Rsc\Pokemon\Types\TypeRelations.cs" />
+    <Compile Include="Rsc\_Common\VerboseEffect.cs" />
+    <Compile Include="Rsc\Games\Versions\Version.cs" />
+    <Compile Include="Rsc\_Common\VersionEncounterDetail.cs" />
+    <Compile Include="Rsc\_Common\VersionGameIndex.cs" />
+    <Compile Include="Rsc\Games\VersionGroups\VersionGroup.cs" />
+    <Compile Include="Rsc\_Common\VersionGroupFlavorText.cs" />
+    <Compile Include="Rsc\_ResourceLists\ResourceList.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
