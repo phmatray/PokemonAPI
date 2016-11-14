@@ -2,7 +2,7 @@
 
 ### Authors ###
 
-* Philippe Matray
+* [Philippe Matray](http://phmatray.net)
 
 ### Technologies ###
 
