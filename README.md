@@ -1,23 +1,33 @@
-# POKEDEX #
+# PokemonAPI — Pokémon REST API in ASP.NET Core
 
-### Authors ###
+A WebAPI providing comprehensive information about Pokémon games, built with ASP.NET Core, Entity Framework Core, and Swashbuckle. Query Pokémon stats, types, moves, and game data via a clean REST interface.
 
-* [Philippe Matray](http://phmatray.net)
+## ✨ Features
+- Full Pokédex data via REST API
+- Pokémon stats, types, abilities, and move sets
+- Built on the official Veekun Pokémon database
+- Swagger/OpenAPI documentation with Swashbuckle
+- Entity Framework Core for data access
 
-### Technologies ###
+## 📦 Installation
+```bash
+git clone https://github.com/phmatray/PokemonAPI
+cd PokemonAPI
+# Download the database (see README for link)
+dotnet run
+```
 
-* ASP .NET Core
-* Entity Framework Core
-* Swashbuckle
+## 🚀 Quick Start
+```bash
+dotnet run
+# API available at: https://localhost:5001
+# Swagger UI: https://localhost:5001/swagger
+```
 
-### API ###
+```http
+GET /api/pokemon/pikachu
+GET /api/pokemon?type=electric&limit=10
+```
 
-* http://git.veekun.com/pokedex.git
-
-### Database ###
-
-* [You can download the database here](https://1drv.ms/f/s!AqTrV0W8pvWLh-ZrMYG-h7dEcSUXtg)
-
-### In the Newspapper ###
-
-* [Programmez!](http://www.programmez.com/magazine/article/uwp-developpement-dun-pokedex)
+## 📄 License
+MIT — see LICENSE
