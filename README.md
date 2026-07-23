@@ -87,6 +87,14 @@ List endpoints support paging and return HATEOAS-style `previous`/`next` links, 
 GET /api/v1/pokemons?limit=20&offset=0
 ```
 
+<!-- portfolio-techstack:start -->
+
+## Tech Stack
+
+- **C#**
+
+<!-- portfolio-techstack:end -->
+
 ## 📄 License
 MIT — see LICENSE
 
