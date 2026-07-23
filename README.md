@@ -1,3 +1,5 @@
+![PokemonAPI banner](.github/banner.png)
+
 # PokemonAPI — Pokémon REST API in ASP.NET Core
 
 A WebAPI providing comprehensive information about Pokémon games, built with ASP.NET Core, Entity Framework Core, and Swashbuckle. Query Pokémon stats, types, moves, and game data via a clean REST interface.
