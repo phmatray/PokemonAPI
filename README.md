@@ -15,6 +15,21 @@
 [![Last commit](https://img.shields.io/github/last-commit/phmatray/PokemonAPI)](https://github.com/phmatray/PokemonAPI/commits)
 <!-- portfolio-badges:end -->
 
+<!-- portfolio-toc:start -->
+
+## Table of Contents
+
+- [✨ Features](#-features)
+- [📦 Installation](#-installation)
+- [🚀 Quick Start](#-quick-start)
+- [Usage](#usage)
+- [📄 License](#-license)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+
+<!-- portfolio-toc:end -->
+
+
 
 A WebAPI providing comprehensive information about Pokémon games, built with ASP.NET Core, Entity Framework Core, and Swashbuckle. Query Pokémon stats, types, moves, and game data via a clean REST interface.
 
