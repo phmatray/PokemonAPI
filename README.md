@@ -45,10 +45,47 @@ GET /api/pokemon/pikachu
 GET /api/pokemon?type=electric&limit=10
 ```
 
+## Usage
+
+Once the API is running (`dotnet run`), query any of the versioned resource controllers, e.g. `PokemonsController` at `api/v1/pokemons`:
+
+```http
+GET /api/v1/pokemons/pikachu
+```
+
+```json
+{
+  "id": 25,
+  "name": "pikachu",
+  "baseExperience": 112,
+  "height": 4,
+  "weight": 60,
+  "isDefault": true,
+  "types": [ { "slot": 1, "type": { "name": "electric" } } ],
+  "abilities": [ { "isHidden": false, "slot": 1, "ability": { "name": "static" } } ]
+}
+```
+
+List endpoints support paging and return HATEOAS-style `previous`/`next` links, mirroring the PokéAPI shape:
+
+```http
+GET /api/v1/pokemons?limit=20&offset=0
+```
+
 ## 📄 License
 MIT — see LICENSE
 
 ---
+
+## Roadmap
+
+- [ ] Publish the Veekun database download/import as an automated setup script instead of a manual step
+- [ ] Add response caching / rate limiting for the public read-only endpoints
+- [ ] Expand automated test coverage across the resource controllers
+- [ ] Containerize the API and database for one-command local startup
+- [ ] Add GraphQL as an alternative to the REST surface
+
+See the [open issues](https://github.com/phmatray/PokemonAPI/issues) for the full list of proposed features and known issues.
 
 <!-- portfolio-sections:start -->
 
