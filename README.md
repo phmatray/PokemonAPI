@@ -8,6 +8,7 @@
 ![Top language](https://img.shields.io/github/languages/top/phmatray/PokemonAPI)
 [![Stars](https://img.shields.io/github/stars/phmatray/PokemonAPI?style=social)](https://github.com/phmatray/PokemonAPI/stargazers)
 [![Forks](https://img.shields.io/github/forks/phmatray/PokemonAPI?style=social)](https://github.com/phmatray/PokemonAPI/network/members)
+[![License](https://img.shields.io/github/license/phmatray/PokemonAPI)](https://github.com/phmatray/PokemonAPI/blob/HEAD/LICENSE)
 
 <!-- Activity -->
 [![Issues](https://img.shields.io/github/issues/phmatray/PokemonAPI)](https://github.com/phmatray/PokemonAPI/issues)
